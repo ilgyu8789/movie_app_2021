@@ -10,10 +10,12 @@ function App() {
   return (
     <HashRouter>
       <Navigation />
+      {/* Error: A <Route> is only ever to be used as the child of <Routes> element 오류해결법 */}
+      {/* https://stackoverflow.com/questions/69832748/error-a-route-is-only-ever-to-be-used-as-the-child-of-routes-element# 참고 */}
       <Routes>
-        <Route path="/" exact={true} component={Home} />
-        <Route path="/about" component={About} />
-        <Route path="/movie/:id" component={Detail} />
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/movie/:id" element={<Detail />} />
       </Routes>
     </HashRouter>
   );
